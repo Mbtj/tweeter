@@ -1,0 +1,9 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* Imported from transparenttextures.com */
+  background-color: #9966cc;
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+}
