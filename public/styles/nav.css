@@ -9,18 +9,22 @@ nav {
   
   background-color: #4056A1;
   color: #FFFFFF;
-  
+  z-index: 1;
 }
 
-span {
+/* Personal note: the ">" operator says to style only the first span within the nav element. Thank you Shaun*/
+nav > span {
   font-family: Bungee, sans-serif;
   font-size: 48px;
 }
 
 .nav-right{
   font-size: 32px;
+  display: flex;
+  flex-direction: column;
 }
 
-.arrow {
+.fa-angles-down {
+  margin-left: 3em;
   color: red;
 }
