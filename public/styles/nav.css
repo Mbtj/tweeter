@@ -1,23 +1,24 @@
 nav {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 120px;
   padding: 1.5em;
+  width: 100vw;
   
   background-color: #4056A1;
-  color: #FFFFFF;;
+  color: #FFFFFF;
   
 }
 
 span {
   font-family: Bungee, sans-serif;
-  font-size: 54px;
+  font-size: 48px;
 }
 
 .nav-right{
   font-size: 32px;
-  position: relative;
 }
 
 .arrow {
