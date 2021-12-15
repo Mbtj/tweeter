@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css">
     <link rel="stylesheet" href="styles/nav.css" type="text/css">
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css">
+    <link rel="stylesheet" href="styles/tweet.css" type="text/css">
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -48,7 +50,7 @@
       </div>
     </nav>
 
-    <header>
+    <header class="profile">
       <div class="avatar">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -56,7 +58,7 @@
       <div class="name">
           <h2>Son Goku</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -71,6 +73,29 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+        <article class="tweet">
+          <header>
+            <span>
+              <img src="/images/profile-hex.png"><h4>Son Goku</h4>
+            </span>
+            <div class="tweet-handle">
+              @Kakarot
+            </div>
+          </header>
+            <h3>
+              Spongebob Spongebob Patrick Patrick
+            </h3>
+          <footer>
+            <span>
+              10 days ago
+            </span>
+            <aside class="tweet-buttons">
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart"></i>
+            </aside>
+          </footer>
+        </article>
       </section>
     </main>
     
