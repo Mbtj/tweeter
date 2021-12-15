@@ -1,7 +1,8 @@
-header {
+header.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 
   /* Imported from transparenttextures.com */
   background-color: #9966cc;
