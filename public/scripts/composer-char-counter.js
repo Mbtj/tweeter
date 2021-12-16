@@ -10,7 +10,7 @@ $(document).ready(function() {
     if (textRemaining < 0) {
       counter.css('color','red');
   } else {
-    counter.css('color', $('body').prop('color'));
+    counter.css('color', $('body').css('color'));
   }
   });
 
