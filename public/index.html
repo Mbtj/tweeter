@@ -30,74 +30,78 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
-  </head>
-
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-      <span>tweeter</span>
-      <div class="nav-right">
-        <span>
-          <strong>Write</strong> a new tweet
-        </span>
-              <i class="fa-solid fa-angles-down"></i>
-      </div>
-    </nav>
-
-    <header class="profile">
-      <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="name">
-          <h2>Son Goku</h2>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- Form for new tweet -->
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="post">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
-          <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
-          <div class="bottom-tweet">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-        <article class="tweet">
-          <header>
-            <span>
-              <img src="/images/profile-hex.png"><h4>Son Goku</h4>
-            </span>
-            <div class="tweet-handle">
-              @Kakarot
-            </div>
-          </header>
-            <h3>
-              Spongebob Spongebob Patrick Patrick
-            </h3>
-          <footer>
-            <span>
-              10 days ago
-            </span>
-            <aside class="tweet-buttons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </aside>
-          </footer>
-        </article>
-      </section>
-    </main>
     
-  </body>
-</html>
+
+    </head>
+    
+    <body>
+      <!-- Top nav bar (fixed) -->
+      <nav>
+        <span>tweeter</span>
+        <div class="nav-right">
+          <span>
+            <strong>Write</strong> a new tweet
+          </span>
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </nav>
+      
+      <header class="profile">
+        <div class="avatar">
+          <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="name">
+          <h2>Son Goku</h2>
+        </div>
+      </header>
+      
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <!-- Form for new tweet -->
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form action="/tweets/" method="post">
+            <!-- <label for="tweet-text">What are you humming about?</label> -->
+            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+            <div class="bottom-tweet">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <div id="tweets-container">
+            <article class="tweet">
+              <header>
+                <span>
+                  <img src="/images/profile-hex.png"><h4>Son Goku</h4>
+                </span>
+                <div class="tweet-handle">
+                  @Kakarot
+                </div>
+              </header>
+              <h3>
+                Spongebob Spongebob Patrick Patrick
+              </h3>
+              <footer>
+                <span>
+                  10 days ago
+                </span>
+                <aside class="tweet-buttons">
+                  <i class="fa-solid fa-flag"></i>
+                  <i class="fa-solid fa-retweet"></i>
+                  <i class="fa-solid fa-heart"></i>
+                </aside>
+              </footer>
+            </article>
+          </div>
+        </section>
+      </main>
+      
+    </body>
+    
+        <!-- App JS -->
+        <script type="text/javascript" src="/scripts/client.js"></script>
+        <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+      
+    </html>
+    
