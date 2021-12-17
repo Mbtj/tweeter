@@ -1,5 +1,10 @@
-.new-tweet{
-  
+#tweet-error{
+  font-family: Bungee;
+  color: red;
+  display: none;
+  border: 4px solid red;
+  padding: 1em;
+  text-align: center
 }
 
 .new-tweet form {

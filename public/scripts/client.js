@@ -48,39 +48,71 @@ const createTweetElement = function(tweet) {
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
         <i class="fa-solid fa-heart"></i>
-      </aside>
-    </footer>
-  </article>
-  `);
+        </aside>
+        </footer>
+        </article>
+        `);
+        
+        return $tweet;
+      }
+      
+      const loadTweets = function(newTweet = false) {
+        $.get('/tweets', (data) => {
+          if (newTweet) {
+            renderTweets([data[data.length - 1]]);
+          } else {
+            renderTweets(data);
+          }
+        })
+      }
 
-  return $tweet;
-}
+      $(document).ready(function() {
 
-const $button = $('#send-tweet');
+        
+        const $button = $('#send-tweet');
+        
+        $button.submit((event) => {
+          event.preventDefault();
+          let $textInput = $('#tweet-text');
+          const tweetText = $button.serialize();
+          
+          // if ($textInput.val().length > 0 && $textInput.val().length <= 140) {
+            if ($textInput.val().length <= 0) {
+              $('#tweet-error').text('You cannot send an empty tweet');
+              $('#tweet-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i>');
+              $('#tweet-error').append('<i class="fa-solid fa-triangle-exclamation"></i>');
 
-$button.submit((event) => {
-  event.preventDefault();
-  let $textInput = $('#tweet-text');
-  const tweetText = $button.serialize();
-  
-  if ($textInput.val().length > 0 && $textInput.val().length <= 140) {
-    $.post('/tweets', tweetText, () => {
-      console.log(tweetText);
-       loadTweets(true);
-    });
-  } else {
-    alert('Invalid tweet length');
-  }
 
-});
+              // Delay to allow text to render
+              setTimeout(() => {
+                $('#tweet-error').slideDown( () => {
+                  console.log('slide');
+                }),50});
 
-const loadTweets = function(newTweet = false) {
-  $.get('/tweets', (data) => {
-    if (newTweet) {
-      renderTweets([data[data.length - 1]]);
-    } else {
-      renderTweets(data);
-    }
-  })
-}
-loadTweets();
+            } else if ($textInput.val().length > 140) {
+              $('#tweet-error').text(`Tweet is too long!`);
+              $('#tweet-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i>');
+              $('#tweet-error').append('<i class="fa-solid fa-triangle-exclamation"></i>');
+
+              // Delay
+              setTimeout(() => {
+                $('#tweet-error').slideDown(()=> {
+                  console.log('slide');
+                }),50});
+            } else {
+                // Clear Any Errors
+                $('#tweet-error').slideUp(()=> {
+                  console.log('slide')
+                });
+
+
+              $.post('/tweets', tweetText, () => {
+                console.log(tweetText);
+                loadTweets(true);
+              });
+            }
+            
+          });
+          
+          loadTweets();
+        });
