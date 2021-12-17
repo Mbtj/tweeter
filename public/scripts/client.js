@@ -74,10 +74,17 @@ const $button = $('#send-tweet');
 $button.submit((event) => {
   alert('it works');
   event.preventDefault();
+  let $textInput = $('#tweet-text');
   const tweetText = $button.serialize();
-  $.post('/tweets', tweetText, () => {
-    console.log(tweetText);
-  });
+  
+  if ($textInput.val().length > 0 && $textInput.val().length <= 140) {
+    $.post('/tweets', tweetText, () => {
+      console.log(tweetText);
+    });
+  } else {
+    alert('Invalid tweet length');
+  }
+
 });
 
 
