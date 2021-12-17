@@ -3,32 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from initial-tweets.json
-
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
 const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
@@ -39,34 +13,47 @@ const renderTweets = function(tweets) {
   }
 }
 
-const createTweetElement = function(tweet) {
-let $tweet = $(`
-<article class="tweet">
-  <header>
-    <span>
-      <img src="${tweet.user.avatars}"><h4>${tweet.user.name}</h4>
-    </span>
-    <div class="tweet-handle">
-      ${tweet.user.handle}
-    </div>
-  </header>
-  <h3>
-    ${tweet.content.text}
-  </h3>
-  <footer>
-    <span>
-      ${timeago.format(tweet.created_at)}
-    </span>
-    <aside class="tweet-buttons">
-      <i class="fa-solid fa-flag"></i>
-      <i class="fa-solid fa-retweet"></i>
-      <i class="fa-solid fa-heart"></i>
-    </aside>
-  </footer>
-</article>
-`);
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
-return $tweet;
+const createTweetElement = function(tweet) {
+
+  const safeAvatar = `${escape(tweet.user.avatars)}`;
+  const safeName = `${escape(tweet.user.name)}`;
+  const safeHandle = `${escape(tweet.user.handle)}`;
+  const safeTweet = `${escape(tweet.content.text)}`;
+
+
+  const $tweet = $(`
+  <article class="tweet">
+    <header>
+      <span>
+        <img src="${safeAvatar}"><h4>${safeName}</h4>
+      </span>
+      <div class="tweet-handle">
+        ${safeHandle}
+      </div>
+    </header>
+    <h3>
+      ${safeTweet}
+    </h3>
+    <footer>
+      <span>
+        ${timeago.format(tweet.created_at)}
+      </span>
+      <aside class="tweet-buttons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </aside>
+    </footer>
+  </article>
+  `);
+
+  return $tweet;
 }
 
 const $button = $('#send-tweet');
