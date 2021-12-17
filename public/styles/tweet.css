@@ -14,12 +14,14 @@ article:hover {
 article.tweet header {
   display: flex;
   justify-content: space-between;
+
   height: 40%;
+  margin-bottom: 1em;
 }
 
 article.tweet img {
-  max-height: 100px;
-  object-fit: contain;
+  padding-right: 15px;
+
 }
 
 article.tweet span {
@@ -32,7 +34,7 @@ article.tweet .tweet-handle {
 
 article.tweet h3 {
   margin: auto;
-  height: 40%;
+  height: 35%;
   text-align: center;
   padding-bottom: 1em;
   border-bottom: 4px solid #545149;
