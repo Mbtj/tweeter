@@ -9,9 +9,9 @@ $(document).ready(function() {
     counter.text(textRemaining);
     if (textRemaining < 0) {
       counter.css('color','red');
-  } else {
-    counter.css('color', $('body').css('color'));
-  }
+    } else {
+      counter.css('color', $('body').css('color'));
+    }
   });
 
   // $('textarea').blur(() => {
