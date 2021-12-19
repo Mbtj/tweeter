@@ -64,7 +64,7 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
-//  
+// fetch tweets from the database
 const loadTweets = function(newTweet = false) {
   $.get('/tweets', (data) => {
     if (newTweet) {
