@@ -5,6 +5,7 @@
  */
 
 
+// Create content for #tweetc container
 const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
