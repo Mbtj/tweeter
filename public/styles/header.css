@@ -3,6 +3,7 @@ header.profile {
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  color: white;
 
   /* Imported from transparenttextures.com */
   background-color: #9966cc;
