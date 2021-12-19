@@ -1,0 +1,40 @@
+@media (max-width: 600px) {
+
+  nav > span {
+    font-size: 8.08vw;
+  }
+  .nav-right {
+    font-size: 5.39vw;
+  }
+
+  .tweet-handle {
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 1200px) {
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+header.profile {
+  position: fixed;
+  padding-top: 200px;
+  width: 30vw;
+  top: 3vw;
+  left: 3vw;
+}
+
+div.profile-container {
+  margin: 3vw;
+  width: 40vw;
+}
+
+main {
+  margin: 10%
+}
+
+
+}

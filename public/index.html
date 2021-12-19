@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="styles/nav.css" type="text/css">
     <link rel="stylesheet" href="styles/new-tweet.css" type="text/css">
     <link rel="stylesheet" href="styles/tweet.css" type="text/css">
+    <link rel="stylesheet" href="styles/responsive.css" type="text/css">
 
 
     <!-- External JS -->
@@ -45,61 +46,38 @@
           <i class="fa-solid fa-angles-down"></i>
         </div>
       </nav>
-      
-      <header class="profile">
-        <div class="avatar">
-          <img src="/images/profile-hex.png"> 
-        </div>
-        <br>
-        <div class="name">
-          <h2>Son Goku</h2>
-        </div>
-      </header>
-      
-      <!-- Page-specific (main) content here -->
-      <main class="container">
-        <!-- Form for new tweet -->
-        <section class="new-tweet">
-          
-          <h2 id="tweet-error"></h2>
-          <h2>Compose Tweet</h2>
-          <form action="/tweets/" method="post" id='send-tweet'>
-            <!-- <label for="tweet-text">What are you humming about?</label> -->
-            <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
-            <div class="bottom-tweet">
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
+      <!-- <div class="primary"> -->
+        <div class="profile-container">
+          <header class="profile">
+            <div class="avatar">
+              <img src="/images/profile-hex.png"> 
             </div>
-          </form>
-          <div id="tweets-container">
-            <article class="tweet">
-              <header>
-                <span>
-                  <img src="/images/profile-hex.png"><h4>Son Goku</h4>
-                </span>
-                <div class="tweet-handle">
-                  @Kakarot
-                </div>
-              </header>
-              <h3>
-                Spongebob Spongebob Patrick Patrick
-              </h3>
-              <footer>
-                <span>
-                  10 days ago
-                </span>
-                <aside class="tweet-buttons">
-                  <i class="fa-solid fa-flag"></i>
-                  <i class="fa-solid fa-retweet"></i>
-                  <i class="fa-solid fa-heart"></i>
-                </aside>
-              </footer>
-            </article>
-          </div>
-        </section>
-      </main>
-      
-    </body>
+            <br>
+            <div class="name">
+              <h2>Son Goku</h2>
+            </div>
+          </header>
+        </div>
+        
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+          <!-- Form for new tweet -->
+          <section class="new-tweet">
+            
+            <h2 id="tweet-error"></h2>
+            <h2>Compose Tweet</h2>
+            <form action="/tweets/" method="post" id='send-tweet'>
+              <textarea name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+              <div class="bottom-tweet">
+                <button type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+          </section>
+            <div id="tweets-container"></div>
+        </main>
+      <!-- </div> -->
+      </body>
     
         <!-- App JS -->
         <script type="text/javascript" src="/scripts/client.js"></script>
