@@ -85,7 +85,6 @@ $(document).ready(function() {
     let $textInput = $('#tweet-text');
     const tweetText = $button.serialize();
           
-    // if ($textInput.val().length > 0 && $textInput.val().length <= 140) {
     if ($textInput.val().length <= 0) {
       $('#tweet-error').text('You cannot send an empty tweet');
       $('#tweet-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i>');
@@ -94,10 +93,8 @@ $(document).ready(function() {
 
       // Delay to allow text to render
       setTimeout(() => {
-        $('#tweet-error').slideDown(() => {
-          console.log('slide');
-        }),50;
-      });
+        $('#tweet-error').slideDown();
+      }, 50);
 
     } else if ($textInput.val().length > 140) {
       $('#tweet-error').text(`Tweet is too long!`);
@@ -106,15 +103,11 @@ $(document).ready(function() {
 
       // Delay to allow transition to animate
       setTimeout(() => {
-        $('#tweet-error').slideDown(()=> {
-          console.log('slide');
-        }),50;
-      });
+        $('#tweet-error').slideDown();
+      }, 50);
     } else {
       // Clear Any Error messages on screen
-      $('#tweet-error').slideUp(()=> {
-        console.log('slide');
-      });
+      $('#tweet-error').slideUp();
       
       // Add most recent tweet
       $.post('/tweets', tweetText, () => {
