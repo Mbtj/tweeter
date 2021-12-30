@@ -108,12 +108,13 @@ $(document).ready(function() {
     } else {
       // Clear Any Error messages on screen
       $('#tweet-error').slideUp();
-      
       // Add most recent tweet
       $.post('/tweets', tweetText, () => {
-        console.log(tweetText);
         loadTweets(true); // prepends single tweet
       });
+
+      // clears textarea for tweet upon submission
+      document.getElementById('tweet-text').value = "";
     }
   });
           
