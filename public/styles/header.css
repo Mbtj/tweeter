@@ -4,6 +4,7 @@ header.profile {
   align-items: center;
   width: 100vw;
   color: white;
+  padding-top: 1em;
 
   /* Imported from transparenttextures.com */
   background-color: #9966cc;
