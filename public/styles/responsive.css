@@ -33,7 +33,8 @@ div.profile-container {
 }
 
 main {
-  margin: 10%
+  margin: 10%;
+  max-width: 50vw;
 }
 
 
