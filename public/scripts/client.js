@@ -84,7 +84,7 @@ $(document).ready(function() {
     event.preventDefault();
     let $textInput = $('#tweet-text');
     const tweetText = $button.serialize();
-          
+    
     if ($textInput.val().length <= 0) {
       $('#tweet-error').text('You cannot send an empty tweet');
       $('#tweet-error').prepend('<i class="fa-solid fa-triangle-exclamation"></i>');
@@ -108,6 +108,8 @@ $(document).ready(function() {
     } else {
       // Clear Any Error messages on screen
       $('#tweet-error').slideUp();
+
+      $('.counter').text('140');
       // Add most recent tweet
       $.post('/tweets', tweetText, () => {
         loadTweets(true); // prepends single tweet
