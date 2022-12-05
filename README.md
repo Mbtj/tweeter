@@ -7,6 +7,9 @@ Tweeter is a simple, single-page Twitter clone created to practice and demonstra
 - CSS3
 - and Back-end code provided by Lighthouse Labs.
 
+## DEMO
+https://mbtj-tweeter.herokuapp.com
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
